@@ -1,19 +1,19 @@
 import { CustomDrawerContent } from "@/components/drawer-content";
 import { useColorScheme } from "@/hooks/use-color-scheme";
 import {
-  DarkTheme,
-  DefaultTheme,
-  ThemeProvider,
-} from "@react-navigation/native";
-import {
   Urbanist_300Light,
   Urbanist_400Regular,
   Urbanist_500Medium,
   Urbanist_600SemiBold,
   Urbanist_700Bold,
 } from "@expo-google-fonts/urbanist";
-import { useFonts } from "expo-font";
+import {
+  DarkTheme,
+  DefaultTheme,
+  ThemeProvider,
+} from "@react-navigation/native";
 import { PortalHost } from "@rn-primitives/portal";
+import { useFonts } from "expo-font";
 import { Drawer } from "expo-router/drawer";
 import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";

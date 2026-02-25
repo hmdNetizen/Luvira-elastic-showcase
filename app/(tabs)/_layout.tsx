@@ -23,6 +23,7 @@ export default function TabLayout() {
         tabBarStyle: {
           backgroundColor: colorScheme === "dark" ? "#151718" : "#fff",
           borderTopColor: colorScheme === "dark" ? "#2a2a2a" : "#e5e5e5",
+          display: "none",
         },
       }}
     >

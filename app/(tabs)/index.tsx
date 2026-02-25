@@ -1,16 +1,17 @@
-import { InsightCardDetails } from "@/components/insight-card-details";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import { Icon } from "@/components/ui/icon";
 import { Text } from "@/components/ui/text";
-import { Textarea } from "@/components/ui/textarea";
 import { useColorScheme } from "@/hooks/use-color-scheme";
 import { cn } from "@/lib/utils";
 import { DrawerActions, useNavigation } from "@react-navigation/native";
-import { Mic, Sparkles } from "lucide-react-native";
+import { CalendarDays, Menu, Mic } from "lucide-react-native";
 import React, { useState } from "react";
 import {
   KeyboardAvoidingView,
   Platform,
   Pressable,
+  ScrollView,
   StyleSheet,
   View,
 } from "react-native";
@@ -52,7 +53,7 @@ export default function HomeScreen() {
         behavior={Platform.OS === "ios" ? "padding" : "height"}
         className="flex-1"
       >
-        {/* <View className="flex-row items-center justify-between px-5 py-3">
+        <View className="flex-row items-center justify-between px-5 py-3">
           <Pressable
             onPress={openDrawer}
             hitSlop={8}
@@ -75,9 +76,9 @@ export default function HomeScreen() {
               <Text className="text-muted-foreground">IV</Text>
             </AvatarFallback>
           </Avatar>
-        </View> */}
+        </View>
 
-        {/* <ScrollView
+        <ScrollView
           className="flex-1 px-5"
           contentContainerClassName="pb-6"
           keyboardShouldPersistTaps="handled"
@@ -121,13 +122,22 @@ export default function HomeScreen() {
               </Pressable>
             ))}
           </View>
-        </ScrollView> */}
-        <InsightCardDetails />
+        </ScrollView>
         <View
-          className={cn("px-5 pt-3 pb-5 rounded-t-2xl bg-white")}
-          style={styles.shadow}
+          className={cn("px-5 pt-3 pb-12 rounded-t-2xl bg-white items-end")}
+          // style={styles.shadow}
         >
-          <View className="relative mb-3">
+          <Button
+            variant="outline"
+            size="icon"
+            className="bg-primary border-0 p-8 rounded-full"
+            // onPress={() => router.navigate("/(root)/recording")}
+            accessibilityLabel="Start voice recording"
+            accessibilityHint="Opens the recording screen to capture audio"
+          >
+            <Icon as={Mic} size={28} className="text-white" />
+          </Button>
+          {/* <View className="relative mb-3">
             <Textarea
               value={prompt}
               onChangeText={setPrompt}
@@ -186,7 +196,7 @@ export default function HomeScreen() {
             >
               Generate Insight
             </Text>
-          </Button>
+          </Button> */}
         </View>
       </KeyboardAvoidingView>
     </SafeAreaView>
