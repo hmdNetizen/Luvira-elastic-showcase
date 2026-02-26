@@ -67,7 +67,12 @@ export type TUserInsightAnalysis = {
         window_days: number;
       };
     };
-    impact_report: {} | null;
+    impact_report: {
+      manual_baseline_seconds: number;
+      agent_execution_seconds: number;
+      efficiency_gain_multiplier: number;
+      agent_builder_tools_used: string[];
+    } | null;
   };
   trace: string[];
   metrics: {

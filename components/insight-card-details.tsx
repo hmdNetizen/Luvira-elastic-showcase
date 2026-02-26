@@ -1,7 +1,3 @@
-import { Text } from "@/components/ui/text";
-import { useColorScheme } from "@/hooks/use-color-scheme";
-import { cn } from "@/lib/utils";
-import { useStreamStore } from "@/store/stream-store";
 import { TrueSheet } from "@lodev09/react-native-true-sheet";
 import { useRouter } from "expo-router";
 import {
@@ -14,7 +10,14 @@ import {
 } from "lucide-react-native";
 import React, { useRef } from "react";
 import { Pressable, ScrollView, StyleSheet, View } from "react-native";
+
+import { Text } from "@/components/ui/text";
 import ReferencedMemoryCardItem from "./referenced-memory-card-item";
+
+import { useColorScheme } from "@/hooks/use-color-scheme";
+import { useStreamStore } from "@/store/stream-store";
+
+import { cn } from "@/lib/utils";
 
 const TAG_COLORS = ["#e7ffdf", "#fde68a", "#ffe5cb", "#dbeafe", "#ede9fe"];
 
