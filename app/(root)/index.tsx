@@ -1,10 +1,9 @@
 import { useRouter } from "expo-router";
 import { CalendarDays, Mic } from "lucide-react-native";
-import React, { useState } from "react";
+import React from "react";
 import {
   Pressable,
   ScrollView,
-  StyleSheet,
   Text,
   useColorScheme,
   View,
@@ -19,12 +18,7 @@ import { cn } from "@/lib/utils";
 export default function Home() {
   const router = useRouter();
 
-  const [prompt, setPrompt] = useState("");
   const colorScheme = useColorScheme();
-
-  const handleTagPress = (text: string) => {
-    setPrompt(text);
-  };
 
   return (
     <ScreenLayout>
@@ -58,7 +52,7 @@ export default function Home() {
           {SUGGESTION_TAGS.map((tag) => (
             <Pressable
               key={tag}
-              onPress={() => handleTagPress(tag)}
+              //   onPress={() => handleTagPress(tag)}
               accessibilityRole="button"
               accessibilityLabel={tag}
               className={cn(
@@ -88,13 +82,3 @@ export default function Home() {
     </ScreenLayout>
   );
 }
-
-const styles = StyleSheet.create({
-  shadow: {
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.3,
-    shadowRadius: 8,
-    elevation: 8,
-  },
-});

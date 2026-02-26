@@ -7,11 +7,7 @@ import {
   Urbanist_600SemiBold,
   Urbanist_700Bold,
 } from "@expo-google-fonts/urbanist";
-import {
-  DarkTheme,
-  DefaultTheme,
-  ThemeProvider,
-} from "@react-navigation/native";
+import { DefaultTheme, ThemeProvider } from "@react-navigation/native";
 import { PortalHost } from "@rn-primitives/portal";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useFonts } from "expo-font";
@@ -51,7 +47,10 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
+    <ThemeProvider
+      // value={colorScheme === "dark" ? DarkTheme : DefaultTheme}
+      value={DefaultTheme}
+    >
       <QueryClientProvider client={queryClient}>
         <Drawer
           drawerContent={(props) => <CustomDrawerContent {...props} />}
